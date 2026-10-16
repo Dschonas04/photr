@@ -14,12 +14,13 @@ const styles: Record<string, React.CSSProperties> = {
   btn: { width: '100%', padding: '0.75rem', background: '#6366f1', color: '#fff', border: 'none', borderRadius: '8px', fontSize: '1rem', fontWeight: 600, cursor: 'pointer' },
   err: { color: '#ef4444', marginBottom: '1rem', fontSize: '0.9rem', textAlign: 'center' },
   colorRow: { display: 'flex', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap' },
-  colorDot: (selected: boolean, color: string): React.CSSProperties => ({
-    width: '32px', height: '32px', borderRadius: '50%', background: color, cursor: 'pointer',
-    border: selected ? '3px solid #1a1a2e' : '3px solid transparent', outline: 'none',
-  }),
   checkRow: { display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.25rem' },
 };
+
+const colorDot = (selected: boolean, color: string): React.CSSProperties => ({
+  width: '32px', height: '32px', borderRadius: '50%', background: color, cursor: 'pointer',
+  border: selected ? '3px solid #1a1a2e' : '3px solid transparent', outline: 'none',
+});
 
 export default function CreateScrapbook() {
   const navigate = useNavigate();
@@ -56,7 +57,7 @@ export default function CreateScrapbook() {
           <label style={styles.label}>Cover-Farbe</label>
           <div style={styles.colorRow}>
             {COLORS.map((c) => (
-              <button key={c} type="button" style={styles.colorDot(form.cover_color === c, c)}
+              <button key={c} type="button" style={colorDot(form.cover_color === c, c)}
                 onClick={() => setForm({ ...form, cover_color: c })} />
             ))}
           </div>

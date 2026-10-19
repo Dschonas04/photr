@@ -1,8 +1,8 @@
 package api
 
 import (
-	"github.com/Dschonas04/scrapebook/backend/internal/api/handlers"
-	"github.com/Dschonas04/scrapebook/backend/internal/middleware"
+	"github.com/Dschonas04/photr/backend/internal/api/handlers"
+	"github.com/Dschonas04/photr/backend/internal/middleware"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/jackc/pgx/v5/pgxpool"

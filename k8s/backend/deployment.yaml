@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
-  namespace: scrapebook
+  namespace: photr
   labels:
     app: backend
 spec:
@@ -17,23 +17,23 @@ spec:
     spec:
       containers:
         - name: backend
-          image: scrapebook/backend:latest
+          image: photr/backend:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
           envFrom:
             - configMapRef:
-                name: scrapebook-config
+                name: photr-config
           env:
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: scrapebook-secrets
+                  name: photr-secrets
                   key: DB_PASSWORD
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: scrapebook-secrets
+                  name: photr-secrets
                   key: JWT_SECRET
           livenessProbe:
             httpGet:

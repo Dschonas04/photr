@@ -4,9 +4,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/Dschonas04/scrapebook/backend/config"
-	"github.com/Dschonas04/scrapebook/backend/internal/api"
-	"github.com/Dschonas04/scrapebook/backend/internal/db"
+	"github.com/Dschonas04/photr/backend/config"
+	"github.com/Dschonas04/photr/backend/internal/api"
+	"github.com/Dschonas04/photr/backend/internal/db"
 )
 
 func main() {

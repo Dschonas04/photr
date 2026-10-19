@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgres
-  namespace: scrapebook
+  namespace: photr
   labels:
     app: postgres
 spec:
@@ -26,17 +26,17 @@ spec:
             - name: POSTGRES_DB
               valueFrom:
                 configMapKeyRef:
-                  name: scrapebook-config
+                  name: photr-config
                   key: DB_NAME
             - name: POSTGRES_USER
               valueFrom:
                 configMapKeyRef:
-                  name: scrapebook-config
+                  name: photr-config
                   key: DB_USER
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: scrapebook-secrets
+                  name: photr-secrets
                   key: POSTGRES_PASSWORD
           volumeMounts:
             - name: postgres-data
@@ -46,7 +46,7 @@ spec:
               command:
                 - pg_isready
                 - -U
-                - scrapebook
+                - photr
             initialDelaySeconds: 15
             periodSeconds: 10
           readinessProbe:
@@ -54,7 +54,7 @@ spec:
               command:
                 - pg_isready
                 - -U
-                - scrapebook
+                - photr
             initialDelaySeconds: 5
             periodSeconds: 5
           resources:

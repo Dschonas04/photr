@@ -1,4 +1,4 @@
-module github.com/Dschonas04/scrapebook/backend
+module github.com/Dschonas04/photr/backend
 
 go 1.25.0
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# setup.sh – One-shot setup for the Scrapebook Kind cluster
+# setup.sh – One-shot setup for the Photr Kind cluster
 set -euo pipefail
 
-CLUSTER_NAME="scrapebook"
+CLUSTER_NAME="photr"
 
 check_tool() {
   if ! command -v "$1" &>/dev/null; then
@@ -24,12 +24,12 @@ else
 fi
 
 echo "🐳 Building Docker images..."
-docker build -t scrapebook/backend:latest ./backend
-docker build -t scrapebook/frontend:latest ./frontend
+docker build -t photr/backend:latest ./backend
+docker build -t photr/frontend:latest ./frontend
 
 echo "📦 Loading images into Kind..."
-kind load docker-image scrapebook/backend:latest --name "${CLUSTER_NAME}"
-kind load docker-image scrapebook/frontend:latest --name "${CLUSTER_NAME}"
+kind load docker-image photr/backend:latest --name "${CLUSTER_NAME}"
+kind load docker-image photr/frontend:latest --name "${CLUSTER_NAME}"
 
 echo "🌐 Installing nginx ingress controller..."
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
@@ -39,7 +39,7 @@ kubectl wait --namespace ingress-nginx \
   --selector=app.kubernetes.io/component=controller \
   --timeout=120s
 
-echo "🚀 Deploying Scrapebook to Kubernetes..."
+echo "🚀 Deploying Photr to Kubernetes..."
 kubectl apply -f k8s/namespace.yaml
 kubectl apply -f k8s/secrets.yaml
 kubectl apply -f k8s/configmap.yaml
@@ -48,13 +48,13 @@ kubectl apply -f k8s/postgres/deployment.yaml
 kubectl apply -f k8s/postgres/service.yaml
 
 echo "   Waiting for PostgreSQL..."
-kubectl rollout status deployment/postgres -n scrapebook --timeout=120s
+kubectl rollout status deployment/postgres -n photr --timeout=120s
 
 kubectl apply -f k8s/backend/deployment.yaml
 kubectl apply -f k8s/backend/service.yaml
 
 echo "   Waiting for backend..."
-kubectl rollout status deployment/backend -n scrapebook --timeout=120s
+kubectl rollout status deployment/backend -n photr --timeout=120s
 
 kubectl apply -f k8s/frontend/deployment.yaml
 kubectl apply -f k8s/frontend/service.yaml
@@ -64,10 +64,10 @@ echo ""
 echo "✅ Setup complete!"
 echo ""
 echo "   Add the following entry to /etc/hosts (requires sudo):"
-echo "     127.0.0.1  scrapebook.local"
+echo "     127.0.0.1  photr.local"
 echo ""
-echo "   Then open: http://scrapebook.local:8000"
+echo "   Then open: http://photr.local:8000"
 echo ""
 echo "   Or use port-forward for quick access:"
-echo "     kubectl port-forward -n scrapebook svc/frontend 3000:80"
+echo "     kubectl port-forward -n photr svc/frontend 3000:80"
 echo "     → http://localhost:3000"

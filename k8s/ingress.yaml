@@ -1,12 +1,12 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: scrapebook-ingress
-  namespace: scrapebook
+  name: photr-ingress
+  namespace: photr
 spec:
   ingressClassName: nginx
   rules:
-    - host: scrapebook.local
+    - host: photr.local
       http:
         paths:
           - path: /api

@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: scrapebook
+  namespace: photr
   labels:
     app: frontend
 spec:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: scrapebook/frontend:latest
+          image: photr/frontend:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

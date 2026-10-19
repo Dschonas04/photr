@@ -1,10 +1,10 @@
 .PHONY: help cluster-create cluster-delete build-images load-images deploy-k8s deploy-ingress \
         deploy-all delete-all port-forward docker-up docker-down
 
-CLUSTER_NAME  := scrapebook
-BACKEND_IMG   := scrapebook/backend:latest
-FRONTEND_IMG  := scrapebook/frontend:latest
-NAMESPACE     := scrapebook
+CLUSTER_NAME  := photr
+BACKEND_IMG   := photr/backend:latest
+FRONTEND_IMG  := photr/frontend:latest
+NAMESPACE     := photr
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | \
@@ -59,16 +59,16 @@ deploy-k8s: ## Apply all Kubernetes manifests
 	kubectl apply -f k8s/ingress.yaml
 	@echo "✅ All manifests applied"
 
-delete-all: ## Delete all scrapebook resources from cluster
+delete-all: ## Delete all photr resources from cluster
 	kubectl delete namespace $(NAMESPACE) --ignore-not-found
 
 # ─── All-in-one ────────────────────────────────────────────────────────────────
 
 deploy-all: cluster-create build-images load-images deploy-ingress deploy-k8s ## Full setup: cluster + images + k8s
 	@echo ""
-	@echo "🎉 Scrapebook is running!"
-	@echo "   Add to /etc/hosts:  127.0.0.1 scrapebook.local"
-	@echo "   Open:               http://scrapebook.local:8000"
+	@echo "🎉 Photr is running!"
+	@echo "   Add to /etc/hosts:  127.0.0.1 photr.local"
+	@echo "   Open:               http://photr.local:8000"
 
 # ─── Local Dev (Docker Compose) ────────────────────────────────────────────────
 

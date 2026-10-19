@@ -4,15 +4,15 @@ services:
   postgres:
     image: postgres:16-alpine
     environment:
-      POSTGRES_DB: scrapebook
-      POSTGRES_USER: scrapebook
-      POSTGRES_PASSWORD: scrapebook
+      POSTGRES_DB: photr
+      POSTGRES_USER: photr
+      POSTGRES_PASSWORD: photr
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U scrapebook"]
+      test: ["CMD-SHELL", "pg_isready -U photr"]
       interval: 5s
       timeout: 5s
       retries: 10
@@ -24,9 +24,9 @@ services:
     environment:
       DB_HOST: postgres
       DB_PORT: "5432"
-      DB_NAME: scrapebook
-      DB_USER: scrapebook
-      DB_PASSWORD: scrapebook
+      DB_NAME: photr
+      DB_USER: photr
+      DB_PASSWORD: photr
       JWT_SECRET: dev-jwt-secret-change-in-prod-min-32-chars
       SERVER_PORT: "8080"
     depends_on:

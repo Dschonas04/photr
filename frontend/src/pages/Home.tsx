@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div style={styles.container}>
       <div style={styles.hero}>
-        <h1 style={styles.h1}>Willkommen bei Scrapebook 📒</h1>
+        <h1 style={styles.h1}>Willkommen bei Photr 📒</h1>
         <p style={styles.sub}>Erstelle und teile deine digitalen Scrapbooks</p>
       </div>
       {loading ? (

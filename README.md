@@ -1,6 +1,6 @@
-# Scrapebook 📒
+# Photr
 
-Eine digitale Scrapbook-Plattform – erstelle, gestalte und teile deine persönlichen Scrapbooks.
+Bilder teilen: Sammlungen anlegen, gestalten und mit anderen teilen.
 
 ## Technologie-Stack
 
@@ -15,7 +15,7 @@ Eine digitale Scrapbook-Plattform – erstelle, gestalte und teile deine persön
 ## Projektstruktur
 
 ```
-Scrapebook-/
+photr/
 ├── backend/              # Go REST API
 │   ├── cmd/server/       # Einstiegspunkt
 │   ├── config/           # Konfiguration (Env-Variablen)
@@ -64,9 +64,9 @@ chmod +x setup.sh
 
 Danach `/etc/hosts` ergänzen:
 ```
-127.0.0.1  scrapebook.local
+127.0.0.1  photr.local
 ```
-→ Browser öffnen: **http://scrapebook.local:8000**
+→ Browser öffnen: **http://photr.local:8000**
 
 ### Option 2 – Schritt für Schritt (Makefile)
 
@@ -117,14 +117,14 @@ Internet
 
 | Ressource          | Beschreibung                              |
 |--------------------|-------------------------------------------|
-| Namespace          | `scrapebook`                              |
+| Namespace          | `photr`                              |
 | Secret             | DB-Passwort + JWT-Secret                  |
 | ConfigMap          | DB-Host, Port, Name, User                 |
 | PVC (2Gi)          | Persistenter Speicher für PostgreSQL      |
 | PostgreSQL Dep.    | 1 Replica, Liveness/Readiness Probes      |
 | Backend Dep.       | 2 Replicas, Liveness/Readiness Probes     |
 | Frontend Dep.      | 2 Replicas, Liveness/Readiness Probes     |
-| Ingress            | `scrapebook.local` → Frontend + Backend   |
+| Ingress            | `photr.local` → Frontend + Backend   |
 
 ## API-Übersicht
 
@@ -149,8 +149,8 @@ Internet
 |---------------|-----------------------------|---------------------|
 | `DB_HOST`     | `localhost`                 | PostgreSQL-Host     |
 | `DB_PORT`     | `5432`                      | PostgreSQL-Port     |
-| `DB_USER`     | `scrapebook`                | Datenbankbenutzer   |
-| `DB_PASSWORD` | `scrapebook`                | Datenbankpasswort   |
-| `DB_NAME`     | `scrapebook`                | Datenbankname       |
+| `DB_USER`     | `photr`                | Datenbankbenutzer   |
+| `DB_PASSWORD` | `photr`                | Datenbankpasswort   |
+| `DB_NAME`     | `photr`                | Datenbankname       |
 | `JWT_SECRET`  | `change-me-in-production`   | JWT-Signaturschlüssel|
 | `SERVER_PORT` | `8080`                      | API-Port            |

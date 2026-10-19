@@ -36,7 +36,7 @@ export default function Navbar() {
 
   return (
     <nav style={styles.nav}>
-      <Link to="/" style={styles.logo}>📒 Scrapebook</Link>
+      <Link to="/" style={styles.logo}>📒 Photr</Link>
       <div style={styles.links}>
         {token ? (
           <>

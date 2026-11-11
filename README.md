@@ -1,5 +1,7 @@
 # Photr
 
+<img src="docs/logo.svg" alt="" width="96" align="right">
+
 Bilder teilen: Sammlungen anlegen, gestalten und mit anderen teilen.
 
 ## Technologie-Stack

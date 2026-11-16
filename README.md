@@ -177,6 +177,15 @@ cd frontend && npm ci && npm run build
 Die CI prüft dasselbe und startet zusätzlich den ganzen Stapel mit Docker
 Compose. Sicherheitslücken bitte nach [SECURITY.md](SECURITY.md) melden.
 
+## Fertige Images
+
+Zu jedem Release liegen Images für amd64 und arm64 auf GitHub Packages:
+
+- `ghcr.io/dschonas04/photr-backend`
+- `ghcr.io/dschonas04/photr-frontend`
+
+Tags: `latest`, die Version (`1.2.3`) sowie `1.2` und `1`. In `docker-compose.yml` statt `build:` jeweils `image: ghcr.io/dschonas04/photr-backend:1` bzw. `photr-frontend:1` eintragen.
+
 ## Lizenz
 
 MIT, siehe [LICENSE](LICENSE).

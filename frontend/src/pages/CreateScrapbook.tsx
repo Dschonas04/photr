@@ -45,7 +45,7 @@ export default function CreateScrapbook() {
   return (
     <div style={styles.wrapper}>
       <div style={styles.card}>
-        <h2 style={styles.h2}>Neues Scrapbook</h2>
+        <h2 style={styles.h2}>Neue Sammlung</h2>
         {error && <p style={styles.err}>{error}</p>}
         <form onSubmit={handleSubmit}>
           <label style={styles.label}>Titel</label>

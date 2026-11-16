@@ -26,12 +26,12 @@ export default function Home() {
     <div style={styles.container}>
       <div style={styles.hero}>
         <h1 style={styles.h1}>Willkommen bei Photr 📒</h1>
-        <p style={styles.sub}>Erstelle und teile deine digitalen Scrapbooks</p>
+        <p style={styles.sub}>Sammlungen anlegen, gestalten und teilen</p>
       </div>
       {loading ? (
         <p style={{ textAlign: 'center', color: '#94a3b8' }}>Lädt...</p>
       ) : books.length === 0 ? (
-        <p style={{ textAlign: 'center', color: '#94a3b8' }}>Noch keine öffentlichen Scrapbooks vorhanden.</p>
+        <p style={{ textAlign: 'center', color: '#94a3b8' }}>Noch keine öffentlichen Sammlungen vorhanden.</p>
       ) : (
         <div style={styles.grid}>
           {books.map((b) => <ScrapbookCard key={b.id} scrapbook={b} />)}

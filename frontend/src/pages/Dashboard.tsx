@@ -25,7 +25,7 @@ export default function Dashboard() {
   }, []);
 
   async function handleDelete(id: number) {
-    if (!confirm('Scrapbook wirklich löschen?')) return;
+    if (!confirm('Sammlung wirklich löschen?')) return;
     await api.delete(id);
     setBooks((prev) => prev.filter((b) => b.id !== id));
   }
@@ -33,14 +33,14 @@ export default function Dashboard() {
   return (
     <div style={styles.container}>
       <div style={styles.header}>
-        <h1 style={styles.h1}>Meine Scrapbooks</h1>
-        <Link to="/scrapbooks/new" style={styles.btn}>+ Neues Scrapbook</Link>
+        <h1 style={styles.h1}>Meine Sammlungen</h1>
+        <Link to="/scrapbooks/new" style={styles.btn}>+ Neue Sammlung</Link>
       </div>
       {loading ? (
         <p style={styles.empty}>Lädt...</p>
       ) : books.length === 0 ? (
         <div style={styles.empty}>
-          <p>Du hast noch keine Scrapbooks.</p>
+          <p>Du hast noch keine Sammlungen.</p>
           <Link to="/scrapbooks/new" style={{ color: '#6366f1', fontWeight: 600 }}>Jetzt erstellen →</Link>
         </div>
       ) : (

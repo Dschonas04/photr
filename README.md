@@ -62,7 +62,7 @@ photr/
 - [Kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
 
-### Option 1 – Automatisches Setup (empfohlen)
+### Option 1: Automatisches Setup (empfohlen)
 
 ```bash
 chmod +x setup.sh
@@ -75,7 +75,7 @@ Danach `/etc/hosts` ergänzen:
 ```
 → Browser öffnen: **http://photr.local:8000**
 
-### Option 2 – Schritt für Schritt (Makefile)
+### Option 2: Schritt für Schritt (Makefile)
 
 ```bash
 # Alles auf einmal
@@ -92,7 +92,7 @@ make status             # Pod-Status anzeigen
 make port-forward       # Port-Forwarding starten
 ```
 
-### Option 3 – Lokale Entwicklung (Docker Compose)
+### Option 3: Lokale Entwicklung (Docker Compose)
 
 ```bash
 make docker-up
@@ -137,11 +137,11 @@ Internet
 
 | Methode | Endpunkt                          | Beschreibung                  | Auth |
 |---------|-----------------------------------|-------------------------------|------|
-| GET     | `/health`                         | Health Check                  | –    |
-| POST    | `/api/auth/register`              | Registrierung                 | –    |
-| POST    | `/api/auth/login`                 | Anmeldung                     | –    |
+| GET     | `/health`                         | Health Check                  |: |
+| POST    | `/api/auth/register`              | Registrierung                 |: |
+| POST    | `/api/auth/login`                 | Anmeldung                     |: |
 | GET     | `/api/auth/me`                    | Aktueller Benutzer            | ✓    |
-| GET     | `/api/public/scrapbooks`          | Öffentliche Sammlungen        | –    |
+| GET     | `/api/public/scrapbooks`          | Öffentliche Sammlungen        |: |
 | GET     | `/api/scrapbooks`                 | Eigene Sammlungen             | ✓    |
 | POST    | `/api/scrapbooks`                 | Sammlung anlegen              | ✓    |
 | GET     | `/api/scrapbooks/:id`             | Sammlung abrufen              | ✓    |

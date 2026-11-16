@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# setup.sh – One-shot setup for the Photr Kind cluster
+# setup.sh: One-shot setup for the Photr Kind cluster
 set -euo pipefail
 
 CLUSTER_NAME="photr"

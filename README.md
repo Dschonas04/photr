@@ -179,7 +179,8 @@ Compose. Sicherheitslücken bitte nach [SECURITY.md](SECURITY.md) melden.
 
 ## Fertige Images
 
-Zu jedem Release liegen Images für amd64 und arm64 auf GitHub Packages:
+Zu jedem Release liegen Images für amd64 und arm64 auf GitHub Packages und
+auf Docker Hub (`docker.io/dschohnas/…`, gleiche Namen und Tags):
 
 - `ghcr.io/dschonas04/photr-backend`
 - `ghcr.io/dschonas04/photr-frontend`

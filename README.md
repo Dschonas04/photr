@@ -1,5 +1,11 @@
 # Photr
 
+[![prüfen](https://github.com/Dschonas04/photr/actions/workflows/pruefen.yml/badge.svg)](https://github.com/Dschonas04/photr/actions/workflows/pruefen.yml)
+[![Release](https://img.shields.io/github/v/release/Dschonas04/photr?label=Version)](https://github.com/Dschonas04/photr/releases/latest)
+[![Go 1.27](https://img.shields.io/badge/Go-1.27-00ADD8)](https://go.dev)
+[![React 19](https://img.shields.io/badge/React-19-61dafb)](https://react.dev)
+[![Lizenz: MIT](https://img.shields.io/badge/Lizenz-MIT-blue.svg)](LICENSE)
+
 <img src="docs/logo.svg" alt="" width="96" align="right">
 
 Bilder teilen: Sammlungen anlegen, gestalten und mit anderen teilen.

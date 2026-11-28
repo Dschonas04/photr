@@ -10,6 +10,16 @@
 
 Bilder teilen: Sammlungen anlegen, gestalten und mit anderen teilen.
 
+![Photr in zwanzig Sekunden: öffentliche Sammlungen auf der Startseite, eine Sammlung mit Fotos und Text, die eigene Übersicht](docs/bilder/rundgang.gif)
+
+*Zwanzig Sekunden: eine öffentliche Sammlung öffnen, durch die Seiten
+blättern, zurück in die eigene Übersicht und die nächste Sammlung ansehen.*
+
+| Startseite | Eine Sammlung | Meine Sammlungen |
+| --- | --- | --- |
+| ![Startseite mit öffentlichen Sammlungen als farbige Karten](docs/bilder/start.png) | ![Seite einer Sammlung mit Titel, Text und Foto](docs/bilder/sammlung.png) | ![Übersicht der eigenen Sammlungen](docs/bilder/uebersicht.png) |
+| Öffentliche Sammlungen sieht jeder. | Jede Seite mit Titel, Text und Bild. | Eigene Sammlungen anlegen, öffentlich oder privat. |
+
 ## Technologie-Stack
 
 | Schicht    | Technologie                       |
